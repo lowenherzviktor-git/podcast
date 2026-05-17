@@ -422,6 +422,60 @@
   }
   .ec-page .ec-notify .ec-placeholder strong { color: var(--ec-cream); }
 
+  /* --- Founding partners (deliberately quieter than crash-test) ----------- */
+  .ec-page .ec-partners h2.ec-h2 {
+    font-size: clamp(28px, 3.4vw, 42px);
+    margin-bottom: 20px;
+  }
+  .ec-page .ec-partners .ec-intro {
+    font-size: 17px;
+    max-width: 760px;
+    margin-bottom: 40px;
+  }
+  .ec-page .ec-partner-tiers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--ec-line);
+    border-left: 1px solid var(--ec-line);
+  }
+  .ec-page .ec-partner-tiers > div {
+    border-right: 1px solid var(--ec-line);
+    border-bottom: 1px solid var(--ec-line);
+    padding: 32px 28px;
+    background: var(--ec-cream);
+  }
+  .ec-page .ec-tier-name {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ec-black);
+    margin-bottom: 6px;
+  }
+  .ec-page .ec-tier-price {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--ec-muted);
+    margin-bottom: 16px;
+  }
+  .ec-page .ec-partner-tiers p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ec-ink);
+    margin: 0;
+  }
+  .ec-page .ec-partners-footnote {
+    margin-top: 40px;
+    margin-bottom: 24px;
+    font-size: 15px;
+    color: var(--ec-muted);
+    max-width: 760px;
+  }
+  @media (max-width: 800px) {
+    .ec-page .ec-partner-tiers { grid-template-columns: 1fr; }
+  }
+
 </style>
 
 <!-- ================================================================== -->
@@ -429,7 +483,7 @@
 <!-- ================================================================== -->
 <section class="ec-section ec-hero">
   <div class="ec-wrap">
-    <div class="ec-eyebrow">An L1 Advisory production · Coming May 2026</div>
+    <div class="ec-eyebrow">An L1 Advisory production · Launching 2026</div>
     <h1>Exits<em>&amp;</em>Chaos</h1>
     <p class="ec-lead">
       Two operators. Your startup. One unfiltered hour pressure-testing the path to exit —
@@ -654,6 +708,47 @@
         episode, we'll have it. The episode itself is not a pitch.</p>
       </details>
     </div>
+  </div>
+</section>
+
+<!-- ================================================================== -->
+<!-- FOUNDING PARTNERS — quieter than crash-test by design               -->
+<!-- ================================================================== -->
+<section class="ec-section ec-light ec-partners" id="partners">
+  <div class="ec-wrap">
+    <div class="ec-eyebrow">Founding partners</div>
+    <h2 class="ec-h2">A small number of partners. <em>Chosen like the founders.</em></h2>
+    <p class="ec-intro">
+      Exits &amp; Chaos is not advertising inventory. It's a room where European operators,
+      M&amp;A advisors, and buy-side listeners come to watch businesses get pressure-tested
+      before they're sold. Partnership here means association with that — not an ad read
+      between segments. We work with a deliberately short list of partners whose work sits
+      adjacent to building, scaling, and transacting serious companies.
+    </p>
+
+    <div class="ec-partner-tiers">
+      <div>
+        <div class="ec-tier-name">Associate</div>
+        <div class="ec-tier-price">€500 / episode</div>
+        <p>Name and logo on the show page and in episode notes. A single in-episode partner credit. For firms who want to be associated with the room.</p>
+      </div>
+      <div>
+        <div class="ec-tier-name">Partner</div>
+        <div class="ec-tier-price">€2,500 / episode</div>
+        <p>Everything in Associate, plus a spoken partner segment and presence across the episode's distributed clips and written teardown. For firms who want to be visible to the buy-side audience, not just listed.</p>
+      </div>
+      <div>
+        <div class="ec-tier-name">Founding Partner</div>
+        <div class="ec-tier-price">€10,000 / episode</div>
+        <p>Everything in Partner, plus category exclusivity, involvement in episode framing where it fits naturally, and first refusal on future seasons. A standing seat, not a placement.</p>
+      </div>
+    </div>
+
+    <p class="ec-partners-footnote">
+      Partnerships are reviewed personally by Viktor &amp; Patrick. We say no more than we say yes — the same way we pick founders.
+    </p>
+
+    <a class="ec-btn ec-btn--ghost" href="mailto:viktor@l1advisory.com?subject=Exits%20%26%20Chaos%20%E2%80%94%20Partnership%20enquiry&amp;body=Tell%20us%20a%20bit%20about%20your%20firm%20and%20which%20tier%20you%27re%20considering.%20Viktor%20%26%20Patrick%20review%20personally.">Enquire about partnership →</a>
   </div>
 </section>
 
