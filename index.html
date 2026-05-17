@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<!--
+  EXITS & CHAOS — standalone landing page
+  ---------------------------------------
+  Deploy:
+    1. Rename this file to index.html
+    2. Drag-and-drop into Vercel / Netlify / Cloudflare Pages
+    3. Add CNAME record: podcast → <host's domain> in your DNS
+    4. Replace both <form> tags with Tally embeds (or your form tool)
+    5. Generate an OG image (1200x630) and host as /og-image.png
+       OR replace the og:image / twitter:image meta tags with a hosted URL
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+
+  <title>Exits &amp; Chaos — A B2B founder podcast by L1 Advisory</title>
+  <meta name="description" content="Two operators. Your startup. One unfiltered hour pressure-testing the path to exit. An L1 Advisory production. Apply to be crash-tested.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://podcast.l1advisory.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Exits &amp; Chaos">
+  <meta property="og:title" content="Exits &amp; Chaos — Your last pitch. Fight or die.">
+  <meta property="og:description" content="Two operators. Your startup. One unfiltered hour pressure-testing the path to exit. An L1 Advisory production.">
+  <meta property="og:url" content="https://podcast.l1advisory.com/">
+  <meta property="og:image" content="https://podcast.l1advisory.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Exits &amp; Chaos — Your last pitch. Fight or die.">
+  <meta name="twitter:description" content="Two operators. Your startup. One unfiltered hour pressure-testing the path to exit.">
+  <meta name="twitter:image" content="https://podcast.l1advisory.com/og-image.png">
+
+  <!-- Favicon (using L1 mark for now — swap once Exits & Chaos has its own) -->
+  <link rel="icon" type="image/png" href="https://l1advisory.com/wp-content/uploads/2025/06/logo-small-black-transparent.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Page-level reset (only acts outside .ec-page wrapper, doesn't affect scoped tokens) */
+    html, body { margin: 0; padding: 0; background: #111111; }
+    body { font-family: 'IBM Plex Sans', system-ui, sans-serif; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+  </style>
+</head>
+<body>
+
+<!-- ================================================================== -->
+<!-- TOP BAR — minimal, link back to L1                                  -->
+<!-- ================================================================== -->
+<header class="ec-topbar">
+  <div class="ec-topbar-inner">
+    <a class="ec-topbar-back" href="https://l1advisory.com" aria-label="Back to L1 Advisory">
+      <img src="https://l1advisory.com/wp-content/uploads/2025/06/logo-small-white-transparent-e1751148185733.png" alt="L1 Advisory" class="ec-topbar-logo">
+      <span>l1advisory.com</span>
+    </a>
+    <span class="ec-topbar-show">Exits &amp; Chaos</span>
+  </div>
+</header>
+
+<div class="ec-page">
+
+<style>
+  /* --- Top bar -------------------------------------------------------------- */
+  .ec-topbar {
+    background: #111111;
+    border-bottom: 1px solid #2a2a2a;
+    padding: 14px 24px;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  }
+  .ec-topbar-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px;
+  }
+  .ec-topbar-back {
+    display: inline-flex; align-items: center; gap: 12px;
+    color: #fafaf7; text-decoration: none;
+    font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600;
+    transition: color .15s ease;
+  }
+  .ec-topbar-back:hover { color: #ff6900; }
+  .ec-topbar-back::before {
+    content: '←'; color: #ff6900; font-size: 16px; font-weight: 400;
+  }
+  .ec-topbar-logo { height: 22px; width: auto; opacity: .9; }
+  .ec-topbar-show {
+    color: #6b6b6b; font-size: 12px; letter-spacing: .18em;
+    text-transform: uppercase; font-weight: 600;
+  }
+  @media (max-width: 600px) {
+    .ec-topbar-show { display: none; }
+  }
+
+  /* --- Footer --------------------------------------------------------------- */
+  .ec-footer {
+    background: #0a0a0a;
+    color: #b8b3a8;
+    padding: 64px 24px 32px;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    font-size: 15px;
+  }
+  .ec-footer-cols {
+    max-width: 1100px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+  }
+  .ec-footer h4 {
+    color: #fafaf7; font-size: 13px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .14em;
+    margin: 0 0 16px;
+  }
+  .ec-footer-col a {
+    display: block; padding: 4px 0;
+    color: #b8b3a8; text-decoration: none;
+    transition: color .15s ease;
+  }
+  .ec-footer-col a:hover { color: #ff6900; }
+  .ec-footer-logo { height: 28px; width: auto; margin-bottom: 16px; opacity: .9; }
+  .ec-footer p { margin: 0 0 20px; max-width: 380px; line-height: 1.55; }
+  .ec-footer-bottom {
+    max-width: 1100px; margin: 56px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid #2a2a2a;
+    font-size: 13px; color: #6b6b6b;
+    display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between;
+  }
+  .ec-footer-bottom a { color: #6b6b6b; text-decoration: none; }
+  .ec-footer-bottom a:hover { color: #ff6900; }
+  @media (max-width: 700px) {
+    .ec-footer-cols { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  /* --- Scoped reset & tokens ------------------------------------------------ */
+
+  .ec-page {
+    --ec-black: #111111;
+    --ec-ink:   #1a1a1a;
+    --ec-cream: #fafaf7;
+    --ec-sand:  #ece9de;
+    --ec-orange:#ff6900;
+    --ec-orange-dark:#cc5400;
+    --ec-muted: #6b7280;
+    --ec-line:  #1a1a1a;
+
+    font-family: 'IBM Plex Sans', system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
+    color: var(--ec-ink);
+    line-height: 1.55;
+    font-size: 17px;
+  }
+  .ec-page * { box-sizing: border-box; }
+  .ec-page h1, .ec-page h2, .ec-page h3, .ec-page h4 {
+    font-family: inherit;
+    color: var(--ec-black);
+    line-height: 1.1;
+    margin: 0 0 .5em;
+    letter-spacing: -0.01em;
+  }
+  .ec-page p { margin: 0 0 1em; }
+  .ec-page a { color: inherit; }
+
+  /* --- Layout primitives ---------------------------------------------------- */
+  .ec-page .ec-section { padding: 96px 24px; }
+  .ec-page .ec-wrap    { max-width: 1100px; margin: 0 auto; }
+  .ec-page .ec-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ec-orange);
+    margin-bottom: 16px;
+  }
+  .ec-page .ec-btn {
+    display: inline-block;
+    padding: 16px 28px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    border: 2px solid var(--ec-black);
+    background: var(--ec-orange);
+    color: var(--ec-black) !important;
+    border-radius: 0;
+    transition: transform .08s ease, background .15s ease;
+  }
+  .ec-page .ec-btn:hover { background: var(--ec-orange-dark); transform: translateY(-1px); }
+  .ec-page .ec-btn--ghost {
+    background: transparent;
+    color: var(--ec-black) !important;
+  }
+  .ec-page .ec-btn--ghost:hover { background: var(--ec-black); color: var(--ec-cream) !important; }
+  .ec-page .ec-btn--on-dark { border-color: var(--ec-cream); }
+  .ec-page .ec-btn--ghost.ec-btn--on-dark { color: var(--ec-cream) !important; }
+  .ec-page .ec-btn--ghost.ec-btn--on-dark:hover { background: var(--ec-cream); color: var(--ec-black) !important; }
+
+  /* --- Hero ----------------------------------------------------------------- */
+  .ec-page .ec-hero {
+    background: var(--ec-black);
+    color: var(--ec-cream);
+    border-bottom: 6px solid var(--ec-orange);
+  }
+  .ec-page .ec-hero .ec-eyebrow { color: var(--ec-orange); }
+  .ec-page .ec-hero h1 {
+    color: var(--ec-cream);
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 700;
+    margin: 0 0 24px;
+  }
+  .ec-page .ec-hero h1 em { color: var(--ec-orange); font-style: normal; }
+  .ec-page .ec-hero .ec-lead {
+    font-size: clamp(18px, 2vw, 22px);
+    max-width: 720px;
+    color: #e8e4d8;
+    margin-bottom: 40px;
+  }
+  .ec-page .ec-hero-actions { display: flex; flex-wrap: wrap; gap: 16px; }
+  .ec-page .ec-hero-meta {
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid #333;
+    display: flex; flex-wrap: wrap; gap: 32px;
+    font-size: 14px; color: #a8a39a;
+    text-transform: uppercase; letter-spacing: .12em;
+  }
+
+  /* --- Generic light section ----------------------------------------------- */
+  .ec-page .ec-light { background: var(--ec-cream); }
+  .ec-page .ec-sand  { background: var(--ec-sand); }
+  .ec-page .ec-dark  { background: var(--ec-black); color: var(--ec-cream); }
+  .ec-page .ec-dark h2, .ec-page .ec-dark h3 { color: var(--ec-cream); }
+  .ec-page .ec-dark .ec-eyebrow { color: var(--ec-orange); }
+
+  .ec-page h2.ec-h2 {
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    max-width: 820px;
+    margin-bottom: 24px;
+  }
+  .ec-page .ec-h2 em { color: var(--ec-orange); font-style: normal; }
+  .ec-page .ec-intro { font-size: 19px; max-width: 720px; margin-bottom: 48px; }
+
+  /* --- Crash test grid ----------------------------------------------------- */
+  .ec-page .ec-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--ec-line);
+    border-left: 1px solid var(--ec-line);
+  }
+  .ec-page .ec-grid-3 > div {
+    border-right: 1px solid var(--ec-line);
+    border-bottom: 1px solid var(--ec-line);
+    padding: 40px 32px;
+    background: var(--ec-cream);
+  }
+  .ec-page .ec-grid-3 .ec-num {
+    font-size: 14px; font-weight: 600; color: var(--ec-orange);
+    letter-spacing: .12em; margin-bottom: 16px;
+  }
+  .ec-page .ec-grid-3 h3 { font-size: 24px; margin-bottom: 12px; }
+
+  @media (max-width: 800px) {
+    .ec-page .ec-grid-3 { grid-template-columns: 1fr; }
+  }
+
+  /* --- Hosts --------------------------------------------------------------- */
+  .ec-page .ec-hosts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 32px;
+  }
+  .ec-page .ec-host {
+    background: var(--ec-cream);
+    padding: 40px;
+    border: 1px solid var(--ec-line);
+  }
+  .ec-page .ec-host .ec-host-name {
+    font-size: 24px; font-weight: 700; margin-bottom: 4px;
+  }
+  .ec-page .ec-host .ec-host-role {
+    font-size: 13px; text-transform: uppercase; letter-spacing: .14em;
+    color: var(--ec-orange); margin-bottom: 20px; font-weight: 600;
+  }
+  @media (max-width: 720px) {
+    .ec-page .ec-hosts { grid-template-columns: 1fr; }
+  }
+
+  /* --- Why apply ----------------------------------------------------------- */
+  .ec-page .ec-why {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-top: 32px;
+  }
+  .ec-page .ec-why h3 {
+    font-size: 20px; margin-bottom: 12px; color: var(--ec-cream);
+    border-top: 3px solid var(--ec-orange); padding-top: 16px;
+  }
+  @media (max-width: 800px) { .ec-page .ec-why { grid-template-columns: 1fr; } }
+
+  /* --- Apply / Form -------------------------------------------------------- */
+  .ec-page .ec-apply { background: var(--ec-cream); }
+  .ec-page .ec-form-shell {
+    background: #fff;
+    border: 2px solid var(--ec-black);
+    padding: 40px;
+    margin-top: 32px;
+  }
+  .ec-page .ec-placeholder {
+    background: repeating-linear-gradient(45deg, #fff, #fff 10px, #f4f1e8 10px, #f4f1e8 20px);
+    border: 2px dashed var(--ec-orange);
+    padding: 32px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--ec-muted);
+  }
+  .ec-page .ec-placeholder strong { color: var(--ec-black); display: block; margin-bottom: 8px; font-size: 16px;}
+  .ec-page .ec-placeholder ul { text-align: left; max-width: 560px; margin: 16px auto 0; padding-left: 20px; }
+  .ec-page .ec-placeholder li { margin: 4px 0; color: var(--ec-ink); }
+
+  /* --- Form scaffolds ------------------------------------------------------ */
+  .ec-page .ec-form { display: flex; flex-direction: column; gap: 20px; }
+  .ec-page .ec-form label {
+    display: flex; flex-direction: column; gap: 6px;
+    font-size: 13px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .12em;
+    color: var(--ec-black);
+  }
+  .ec-page .ec-form input {
+    font-family: inherit; font-size: 17px;
+    padding: 14px 16px;
+    background: var(--ec-cream);
+    border: 2px solid var(--ec-black);
+    border-radius: 0;
+    color: var(--ec-black);
+    outline: none;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .ec-page .ec-form input:focus { border-color: var(--ec-orange); background: #fff; }
+  .ec-page .ec-form-note {
+    font-size: 13px; color: var(--ec-muted); margin: 0;
+  }
+  .ec-page .ec-notify .ec-form input {
+    background: #1f1f1f; color: var(--ec-cream); border-color: var(--ec-cream);
+  }
+  .ec-page .ec-notify .ec-form input:focus { border-color: var(--ec-orange); }
+  .ec-page .ec-notify .ec-form label { color: var(--ec-cream); }
+  .ec-page .ec-notify .ec-form-note { color: #b8b3a8; }
+  .ec-page .ec-notify .ec-form .ec-btn { border-color: var(--ec-cream); }
+
+  /* --- Form states --------------------------------------------------------- */
+  .ec-page .ec-form button[type="submit"]:disabled {
+    opacity: .6; cursor: wait;
+  }
+  .ec-page .ec-form-success {
+    padding: 32px;
+    background: var(--ec-orange);
+    color: var(--ec-black);
+    border: 2px solid var(--ec-black);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .ec-page .ec-form-success::before {
+    content: '✓';
+    display: block;
+    font-size: 48px;
+    line-height: 1;
+    margin-bottom: 12px;
+    font-weight: 400;
+  }
+  .ec-page .ec-notify .ec-form-success {
+    background: var(--ec-black);
+    color: var(--ec-orange);
+    border-color: var(--ec-cream);
+  }
+  .ec-page .ec-form-error {
+    color: var(--ec-orange-dark);
+    font-weight: 600;
+  }
+
+  /* --- FAQ ----------------------------------------------------------------- */
+  .ec-page .ec-faq details {
+    border-bottom: 1px solid var(--ec-line);
+    padding: 24px 0;
+  }
+  .ec-page .ec-faq details:first-of-type { border-top: 1px solid var(--ec-line); }
+  .ec-page .ec-faq summary {
+    font-weight: 600; font-size: 19px; cursor: pointer;
+    list-style: none; display: flex; justify-content: space-between; align-items: center;
+  }
+  .ec-page .ec-faq summary::-webkit-details-marker { display: none; }
+  .ec-page .ec-faq summary::after {
+    content: '+'; color: var(--ec-orange); font-size: 28px; font-weight: 400; line-height: 1;
+  }
+  .ec-page .ec-faq details[open] summary::after { content: '−'; }
+  .ec-page .ec-faq details > p { margin-top: 12px; color: var(--ec-ink); }
+
+  /* --- Notify strip -------------------------------------------------------- */
+  .ec-page .ec-notify {
+    background: var(--ec-orange);
+    color: var(--ec-black);
+    padding: 56px 24px;
+    text-align: center;
+  }
+  .ec-page .ec-notify h2 { color: var(--ec-black); font-size: 36px; margin-bottom: 12px; }
+  .ec-page .ec-notify p { max-width: 560px; margin: 0 auto 24px; font-size: 18px; }
+  .ec-page .ec-notify .ec-form-shell { background: var(--ec-black); border-color: var(--ec-black); }
+  .ec-page .ec-notify .ec-placeholder {
+    background: var(--ec-black);
+    border-color: var(--ec-cream);
+    color: var(--ec-sand);
+  }
+  .ec-page .ec-notify .ec-placeholder strong { color: var(--ec-cream); }
+
+</style>
+
+<!-- ================================================================== -->
+<!-- HERO                                                                -->
+<!-- ================================================================== -->
+<section class="ec-section ec-hero">
+  <div class="ec-wrap">
+    <div class="ec-eyebrow">An L1 Advisory production · Coming May 2026</div>
+    <h1>Exits<em>&amp;</em>Chaos</h1>
+    <p class="ec-lead">
+      Two operators. Your startup. One unfiltered hour pressure-testing the path to exit —
+      the numbers, the story, the buyer. Polished decks die at the door.
+    </p>
+    <div class="ec-hero-actions">
+      <a class="ec-btn" href="#apply">Apply to be crash-tested →</a>
+      <a class="ec-btn ec-btn--ghost ec-btn--on-dark" href="#notify">Notify me at launch</a>
+    </div>
+    <div class="ec-hero-meta">
+      <span>Founders · €1–20M ARR</span>
+      <span>Hosts: Viktor Legetsky &amp; Patrick Pilipiec</span>
+      <span>New episodes weekly</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================== -->
+<!-- WHAT IS THE SHOW                                                    -->
+<!-- ================================================================== -->
+<section class="ec-section ec-light">
+  <div class="ec-wrap">
+    <div class="ec-eyebrow">The premise</div>
+    <h2 class="ec-h2">Most podcasts polish founder stories. <em>We stress-test them for the buyer.</em></h2>
+    <p class="ec-intro">
+      Every founder eventually sits across from someone who's about to write a very large cheque —
+      or walk away. That conversation is brutal, specific, and unforgiving. Exits &amp; Chaos is a
+      simulation of that room, run by two operators who've been on both sides of it. No softball
+      questions. No founder-worship. Just one hour of finding out whether your business survives
+      contact with reality.
+    </p>
+    <p style="font-size: clamp(32px, 4.5vw, 52px); font-weight: 700; color: var(--ec-black); line-height: 1.05; margin: 40px 0 0; padding-top: 32px; border-top: 4px solid var(--ec-orange); max-width: 760px; letter-spacing: -0.02em;">
+      Your last pitch. <span style="color: var(--ec-orange);">Fight or die.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ================================================================== -->
+<!-- THE CRASH TEST                                                      -->
+<!-- ================================================================== -->
+<section class="ec-section ec-sand">
+  <div class="ec-wrap">
+    <div class="ec-eyebrow">The crash test</div>
+    <h2 class="ec-h2">Three things break first. <em>We start there.</em></h2>
+    <p class="ec-intro">
+      Every episode runs the same gauntlet. The founder doesn't see the questions in advance.
+      We do.
+    </p>
+    <div class="ec-grid-3">
+      <div>
+        <div class="ec-num">01 · THE NUMBERS</div>
+        <h3>The figures you don't show investors</h3>
+        <p>
+          Cap table. Net retention. Real CAC vs. blended. Concentration risk. Quality of revenue.
+          We pull on every thread until something doesn't hold.
+        </p>
+      </div>
+      <div>
+        <div class="ec-num">02 · THE STORY</div>
+        <h3>The narrative under pressure</h3>
+        <p>
+          The version you tell investors, the version you tell yourself, and the version that
+          survives an acquirer's diligence. They're rarely the same. We find the gaps.
+        </p>
+      </div>
+      <div>
+        <div class="ec-num">03 · THE EXIT PATH</div>
+        <h3>The price reality, not the dream</h3>
+        <p>
+          Comparable transactions. Realistic multiples. Who actually buys companies like yours,
+          at what stage, at what number — and why your target is probably wrong.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================== -->
+<!-- HOSTS                                                               -->
+<!-- ================================================================== -->
+<section class="ec-section ec-light">
+  <div class="ec-wrap">
+    <div class="ec-eyebrow">Your hosts</div>
+    <h2 class="ec-h2">Two operators. <em>Not two journalists.</em></h2>
+    <p class="ec-intro">
+      We've built revenue engines, sat on the cap tables, and been in the rooms where the price
+      gets argued line by line. The questions we ask are the questions someone is eventually going
+      to ask you for real.
+    </p>
+
+    <div class="ec-hosts">
+      <div class="ec-host">
+        <div class="ec-host-name">Viktor Legetsky</div>
+        <div class="ec-host-role">Co-host · Founder, L1 Advisory</div>
+        <p>
+          18+ years building B2B sales and GTM — operator chair, not consultant chair. Founded
+          L1 Advisory to install revenue engines inside European software companies that don't have
+          time for slide decks. Bipolar, disclosed on the page on purpose: the highs sharpen pattern
+          recognition, the lows kill small talk. Both serve the questions you'll hear on this show.
+        </p>
+      </div>
+      <div class="ec-host">
+        <div class="ec-host-name">Patrick Pilipiec</div>
+        <div class="ec-host-role">Co-host</div>
+        <p>
+          Serial founder. Multiple companies built across data and AI — innovator before either
+          word became a marketing line. Strategic operator and investor. Has been on the other side
+          of most of the questions we ask, which is exactly why he asks them.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================== -->
+<!-- WHY APPLY                                                           -->
+<!-- ================================================================== -->
+<section class="ec-section ec-dark">
+  <div class="ec-wrap">
+    <div class="ec-eyebrow">Why apply</div>
+    <h2 class="ec-h2">Why a sane founder volunteers <em>for an hour of this.</em></h2>
+    <p class="ec-intro" style="color:#e8e4d8;">
+      Three reasons. Pick whichever one matters most to you.
+    </p>
+    <div class="ec-why">
+      <div>
+        <h3>A real sparring round</h3>
+        <p>Before you face actual investors or acquirers. No hand-holding, no "great question."
+        If your story can't survive us, it won't survive them.</p>
+      </div>
+      <div>
+        <h3>Strategic thinking, free</h3>
+        <p>You'd pay six figures for an L1 engagement to get this kind of pressure on your model.
+        Apply, get accepted, get it on the record.</p>
+      </div>
+      <div>
+        <h3>A platform for serious operators</h3>
+        <p>Founders, M&amp;A advisors, and the buyer-side crowd will be listening. Survive the
+        hour and that's a credential no pitch deck can manufacture.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================== -->
+<!-- APPLY                                                               -->
+<!-- ================================================================== -->
+<section class="ec-section ec-apply" id="apply">
+  <div class="ec-wrap">
+    <div class="ec-eyebrow">Apply</div>
+    <h2 class="ec-h2">Put your startup <em>on the test bench.</em></h2>
+    <p class="ec-intro">
+      Applications are reviewed by Viktor &amp; Patrick personally. We pick founders we believe
+      will hold up — and benefit from — sixty minutes of public pressure. Roughly 50% of
+      applicants make it on.
+    </p>
+
+    <div class="ec-form-shell">
+      <!-- ============================================================ -->
+      <!-- FORM #1 — APPLICATION (visual scaffold)                       -->
+      <!--                                                                -->
+      <!-- The fields below are styled but NOT wired to a backend. Before -->
+      <!-- going live, replace the entire <form> tag (or wrap it) with    -->
+      <!-- one of:                                                        -->
+      <!--   • Fluent Forms shortcode  e.g.  [fluentform id="3"]          -->
+      <!--   • Tally embed             <iframe src="https://tally.so/...">-->
+      <!--   • ConvertKit / Mailchimp form HTML                           -->
+      <!-- ============================================================ -->
+      <form class="ec-form" data-webhook="https://n8n.l1advisory.com/webhook/exits-chaos-apply" data-success="Application received. Viktor or Patrick will get back to you within 5 business days.">
+        <label>Your name
+          <input type="text" name="name" required>
+        </label>
+        <label>Email
+          <input type="email" name="email" required>
+        </label>
+        <label>Company website
+          <input type="url" name="website" placeholder="https://" required>
+        </label>
+        <button type="submit" class="ec-btn" style="margin-top: 8px;">Send application →</button>
+        <p class="ec-form-note">We read every application personally. Expect a reply within 5 business days.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================== -->
+<!-- FAQ                                                                 -->
+<!-- ================================================================== -->
+<section class="ec-section ec-light">
+  <div class="ec-wrap">
+    <div class="ec-eyebrow">Before you apply</div>
+    <h2 class="ec-h2">The honest FAQ.</h2>
+    <div class="ec-faq">
+      <details>
+        <summary>Is this confidential?</summary>
+        <p>No. The whole point is that it's on the record. We agree off-the-record territory in
+        pre-production — specific customer names, exact contract values, anything legally
+        sensitive — but everything else is fair game.</p>
+      </details>
+      <details>
+        <summary>What stage are you looking for?</summary>
+        <p>Founders contemplating an exit in the next 6–24 months, typically €1–20M ARR. Earlier
+        is fine if the exit thesis is unusually clear. Pre-revenue is not a fit.</p>
+      </details>
+      <details>
+        <summary>How long is a recording?</summary>
+        <p>~60 minutes live, edited to ~45. Remote or in-person in [LOCATION].</p>
+      </details>
+      <details>
+        <summary>Should I prepare?</summary>
+        <p>You can. We don't recommend it. We're testing how you think, not how you've
+        rehearsed.</p>
+      </details>
+      <details>
+        <summary>What disqualifies an applicant?</summary>
+        <p>Pre-revenue, allergic to hard questions, or here for free PR. We can spot all three
+        from the application.</p>
+      </details>
+      <details>
+        <summary>Is this an L1 Advisory sales funnel?</summary>
+        <p>It's an L1 production and we're proud of it. If a conversation makes sense after the
+        episode, we'll have it. The episode itself is not a pitch.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================== -->
+<!-- NOTIFY ME                                                           -->
+<!-- ================================================================== -->
+<section class="ec-section ec-notify" id="notify">
+  <div class="ec-wrap">
+    <div class="ec-eyebrow" style="color:var(--ec-black);">Not applying — just listening?</div>
+    <h2>Get the first episode the day it drops.</h2>
+    <p>One email when we launch. No newsletter. No drip. We'll unsubscribe you ourselves if you ask twice.</p>
+
+    <div class="ec-form-shell" style="max-width:520px; margin: 0 auto;">
+      <!-- ============================================================ -->
+      <!-- FORM #2 — EMAIL NOTIFY (visual scaffold)                       -->
+      <!-- Replace with a single-field email capture from ConvertKit /    -->
+      <!-- Mailchimp / Tally. Tag subscribers as "exits-and-chaos-launch".-->
+      <!-- ============================================================ -->
+      <form class="ec-form" data-webhook="https://n8n.l1advisory.com/webhook/exits-chaos-notify" data-success="On the list. We'll email you when episode 1 drops.">
+        <label>Your email
+          <input type="email" name="email" placeholder="you@company.com" required>
+        </label>
+        <button type="submit" class="ec-btn" style="margin-top: 4px;">Notify me at launch →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</div>
+<!-- /ec-page -->
+
+<!-- ================================================================== -->
+<!-- FOOTER                                                              -->
+<!-- ================================================================== -->
+<footer class="ec-footer">
+  <div class="ec-footer-cols">
+    <div class="ec-footer-col">
+      <img src="https://l1advisory.com/wp-content/uploads/2025/06/logo-small-white-transparent-e1751148185733.png" alt="L1 Advisory" class="ec-footer-logo">
+      <p>
+        Exits &amp; Chaos is a production of L1 Advisory — operator-led advisory
+        installing AI-powered revenue, GTM, and ops systems inside €1–20M ARR
+        B2B companies.
+      </p>
+      <a href="https://l1advisory.com" style="color: #ff6900; text-decoration: none; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; font-size: 13px;">Visit L1 Advisory →</a>
+    </div>
+    <div class="ec-footer-col">
+      <h4>The show</h4>
+      <a href="#apply">Apply to be crash-tested</a>
+      <a href="#notify">Notify me at launch</a>
+    </div>
+    <div class="ec-footer-col">
+      <h4>Legal</h4>
+      <a href="https://l1advisory.com/impressum/">Impressum</a>
+      <a href="https://l1advisory.com/datenschutzerklarung/">Datenschutzerklärung</a>
+    </div>
+  </div>
+  <div class="ec-footer-bottom">
+    <span>© 2026 L1 Advisory. All rights reserved.</span>
+    <span>Built in Europe. Recorded on the record.</span>
+  </div>
+</footer>
+
+<!-- ================================================================== -->
+<!-- FORM HANDLER — POST to n8n webhooks, inline success/error           -->
+<!-- ================================================================== -->
+<script>
+(function () {
+  function showSuccess(formEl, message) {
+    var div = document.createElement('div');
+    div.className = 'ec-form-success';
+    div.textContent = message;
+    formEl.replaceWith(div);
+  }
+
+  function showError(formEl, noteEl, btnEl, originalText) {
+    btnEl.disabled = false;
+    btnEl.textContent = originalText;
+    noteEl.textContent = "Couldn't send right now — try again, or email hello@l1advisory.com.";
+    noteEl.classList.add('ec-form-error');
+  }
+
+  function ensureNote(formEl) {
+    var note = formEl.querySelector('.ec-form-note');
+    if (!note) {
+      note = document.createElement('p');
+      note.className = 'ec-form-note';
+      formEl.appendChild(note);
+    }
+    return note;
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    var formEl = e.currentTarget;
+    var url = formEl.dataset.webhook;
+    var successMsg = formEl.dataset.success || 'Got it — thanks.';
+    var btn = formEl.querySelector('button[type="submit"]');
+    var note = ensureNote(formEl);
+    var originalText = btn.textContent;
+
+    var payload = {};
+    var fd = new FormData(formEl);
+    fd.forEach(function (v, k) { payload[k] = v; });
+    payload.source = location.hostname || 'podcast.l1advisory.com';
+    payload.path = location.pathname;
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    note.classList.remove('ec-form-error');
+    note.textContent = '';
+
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      mode: 'cors'
+    })
+      .then(function (res) {
+        if (!res.ok && res.type !== 'opaque') throw new Error('HTTP ' + res.status);
+        showSuccess(formEl, successMsg);
+      })
+      .catch(function () {
+        showError(formEl, note, btn, originalText);
+      });
+  }
+
+  document.querySelectorAll('form[data-webhook]').forEach(function (f) {
+    f.addEventListener('submit', handleSubmit);
+  });
+})();
+</script>
+
+</body>
+</html>
